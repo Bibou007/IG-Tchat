@@ -1,3 +1,36 @@
+<?php
+if (isset($_POST['submit'])) {
+
+    $name = htmlspecialchars(trim($_POST['name']));
+    $email = htmlspecialchars(trim($_POST['email']));
+    $password = sha1(htmlspecialchars(trim($_POST['password'])));
+
+
+    if (email_taken($email) == 1) {
+        $error_email = "L'adresse Email est déjà Utilisé";
+    } else {
+        register($name, $email, $password);
+
+        $_SESSION['tchat'] = $email;
+
+        header('Location:index.php?page=members');
+    }
+}
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
 <div class="regForm">
     <h2>Register</h2>
     <form method="post" id="regForm">
@@ -14,8 +47,8 @@
             <label for="password" class="field-label">Your Password </label>
             <input type="password" name="password" id="password" class="field-input">
         </div>
-
-        <button type="submit">Envoyer</button>
+        <p class="error"><?= (isset($error_email)) ? $error_email : '' ?></p>
+        <button type="submit" name="submit">Envoyer</button>
 
 
     </form>

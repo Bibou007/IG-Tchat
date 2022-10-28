@@ -140,3 +140,9 @@ margin:1% 20%;
     border:1px solid blue;
     color: blue;
 }
+
+
+p.error{
+
+  color: red;
+}

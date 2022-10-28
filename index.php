@@ -1,22 +1,26 @@
-
 <?php
 
-$pages=scandir('pages/');
 
 
-if(isset($_GET['page']) && !empty($_GET['page']) && in_array($_GET['page'].'.php',$pages)){
+include('functions/main-functions.php');
 
-    $page=$_GET['page'];
-}else{
-    $page='home';
+
+$pages = scandir('pages/');
+
+
+if (isset($_GET['page']) && !empty($_GET['page']) && in_array($_GET['page'] . '.php', $pages)) {
+
+    $page = $_GET['page'];
+} else {
+    $page = 'home';
 }
 
-$pages_function=scandir('functions/');
+$pages_function = scandir('functions/');
 // print_r($pages_function);
 
 
-if(in_array($_GET['page'].'.func.php',$pages_function)){
-    include('functions/'.$_GET['page'].'.func.php');
+if (in_array($_GET['page'] . '.func.php', $pages_function)) {
+    include('functions/' . $_GET['page'] . '.func.php');
 }
 
 
@@ -29,6 +33,7 @@ if(in_array($_GET['page'].'.func.php',$pages_function)){
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,35 +41,36 @@ if(in_array($_GET['page'].'.func.php',$pages_function)){
     <link rel="stylesheet" href="css/style.css">
     <title>IG Tchatt</title>
 </head>
+
 <body>
-<?php 
+    <?php
 
-include 'body/topbar.php'
+    include 'body/topbar.php'
 
-?>
-<?php 
+    ?>
+    <?php
 
-include('pages/'.$page.'.php');
+    include('pages/' . $page . '.php');
 
 
-?>
-    <h1>Bienvenu en IG
-    </h1>
+    ?>
+    <h1>Bienvenu en IG</h1>
 
 
 
     <script src="js/jquery.js"></script>
-<?php
-$pages_js=scandir('js/');
+    <?php
+    $pages_js = scandir('js/');
 
-if(in_array($_GET['page'].'.func.js',$pages_js)){
+    if (in_array($_GET['page'] . '.func.js', $pages_js)) {
     ?>
-    <script src="js/<?= $_GET['page']?>.func.js"></script>
-   
-<?php
-}
- ?>
+        <script src="js/<?= $_GET['page'] ?>.func.js"></script>
+
+    <?php
+    }
+    ?>
 
 
 </body>
+
 </html>
