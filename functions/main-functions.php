@@ -1,7 +1,7 @@
 
 
 <?php
-
+session_start();
 $dbhost = 'localhost';
 $dbname = 'tchat';
 $dbuser = 'root';
@@ -14,7 +14,14 @@ try {
     echo ('Une erreur est survenu lors de la connexion à la base de données');
 }
 
-
+function isLogged(){
+    if(isset($_SESSION['tchat'])){
+        $logged=1;
+    }else{
+        $logged=0;
+    }
+    return $logged;
+}
 
 
 ?>

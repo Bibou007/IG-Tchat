@@ -1,0 +1,241 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* text-align: center;
+      line-height: 40px; */
+  padding: 0 4%;
+  height: 70px;
+  background-color: blue;
+  color: white;
+}
+
+.appname {
+  color: inherit;
+  font-size: 22px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.menu a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 25px 6px;
+}
+
+.menu a:hover {
+  background-color: rgb(5, 5, 165);
+}
+
+.menu a.active {
+  background-color: rgb(5, 5, 165);
+}
+
+/* CUSTOM CSS PROVIDE FROM GRAFIKART */
+
+.regForm {
+  /* text-align: center; */
+  margin: 1% 20%;
+}
+
+.regForm h2 {
+  text-align: center;
+  text-decoration: underline;
+}
+#regForm {
+  border: 1px solid black;
+  padding: 10% 10%;
+}
+
+.field {
+  position: relative;
+  height: 72px;
+  padding: 16px 0 8px 0;
+}
+.field-label {
+  position: relative;
+  margin: 0;
+  display: block;
+
+  color: #bfbfbf;
+  line-height: 16px;
+  font-size: 16px;
+  font-weight: 400;
+
+  transform: translateY(24px);
+  transition: transform 0.3s, color 0.3s;
+  transform-origin: 0 50%;
+}
+.field-input {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 32px;
+  padding: 8px 0;
+
+  line-height: 16px;
+  font-family: Roboto;
+  font-size: 16px;
+
+  background: transparent;
+  border: none;
+  -webkit-appearance: none;
+  outline: none;
+}
+.field::after,
+.field::before {
+  content: "";
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+
+  background-color: #e6e6e6;
+}
+
+.field::after {
+  background-color: blue;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.has-label .field-label {
+  transform: translateY(0) scale(0.75);
+}
+
+.is-focused .field-label {
+  color: blue;
+}
+.field.is-focused::after {
+  transform: scaleX(1);
+}
+
+.field.error::after {
+  background-color: red;
+}
+.field.error .field-label {
+  color: red;
+}
+
+
+.field-area{
+    height: auto;
+    padding-top: 5px;
+    width: 90%;
+}
+
+#regForm button {
+  margin: 10% 0 0 0;
+  width: 100%;
+  height: 35px;
+  background-color: blue;
+  border: blue;
+  color: white;
+}
+#logForm button {
+  margin: 10% 0 0 0;
+  width: 100%;
+  height: 35px;
+  background-color: blue;
+  border: blue;
+  color: white;
+}
+#regForm button:hover {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid blue;
+  color: blue;
+}
+
+p.error {
+  color: red;
+}
+
+.member{
+    padding: 25px 20px;
+    background-color: #d3d5e0;
+    margin: 10px 15px 10px 12px;
+    border-radius: 3px;
+    position: relative;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.4);
+}
+.member .select{
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    color: #e6e6e6;
+    padding: 15px 10px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 255, 0.705);
+    text-align: center;
+    line-height: 10px;
+}
+
+.member .select:hover{
+    background-color: blue;
+}
+
+.bottom{
+    position: fixed;
+    background-color: white;
+    bottom: 0px;
+    width: 96%;
+}
+
+
+#send {
+    
+    width: 10%;
+    height: 25px;
+    background-color: blue;
+    border: blue;
+    color: white;
+    position: absolute;
+    right: 0px;
+    top: 25px;
+  }
+
+  .message-box{
+    position: relative;
+
+    background-color: #fff;
+    margin-bottom: 95px;
+  }
+
+  .message-box .message{
+    background-color: rgb(255, 0, 0);
+    padding: 3px 8px;
+    min-height: 50px;
+    margin: 5px 0px;
+    border-radius: 15px;
+    width: 75%;
+    
+    display: inline-block;
+
+  }
+
+  .message.message-member{
+    background-color: yellow;
+    float: right;
+
+  }
+
+  .message.message-user{
+    background-color: #d3d5e0;
+    float: left;
+  }

@@ -1,4 +1,16 @@
 <?php
+if(isLogged()==1){
+    header('Location:index.php?page=members');
+}
+
+
+
+?>
+
+
+
+
+<?php
 if (isset($_POST['submit'])) {
 
     $name = htmlspecialchars(trim($_POST['name']));

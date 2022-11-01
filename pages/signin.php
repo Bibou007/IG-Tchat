@@ -1,12 +1,29 @@
 <?php
 
+if(isLogged() == 1){
+    header('Location:index.php?page=members');
+}
+
+
+
+?>
+ 
+
+
+
+
+<?php
+
 if (isset($_POST['submit'])) {
     
     $email = htmlspecialchars(trim($_POST['email']));
     $password = sha1(htmlspecialchars(trim($_POST['password'])));
     
     if (user_verify($email, $password) == 1) {
+        echo(user_verify($email,$password));
         $_SESSION['tchat'] = $email;
+        print_r($_SESSION);
+        // die('Bienvenu');
         header('Location:index.php?page=members');
     } else {
         $error_user_not_found = "L'email ou le mot de passe est incorrecte";
